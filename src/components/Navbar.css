@@ -1,0 +1,116 @@
+/* navigation bar style */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4B2E39;
+    color: whitesmoke;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9998;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+/* navigation bar logo */
+.navbar-logo {
+    font-size: calc(18px + 1vw);
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.navbar-logo-text {
+    display: block;
+}
+
+.navbar-logo-text-small {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .navbar-logo-text {
+        display: none;
+    }
+
+    .navbar-logo-text-small {
+        display: block;
+    }
+}
+
+/* login button style */
+.login-btn {
+    background-color: whitesmoke;
+    color: #4B2E39;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(14px + 0.5vw);
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.login-btn:hover {
+    background-color: #9f637a;
+    color: whitesmoke;
+}
+
+/* email display style */
+.user-email {
+    font-size: calc(14px + 0.5vw);
+    cursor: pointer;
+}
+
+.user-email:hover {
+    color: #9f637a
+}
+
+/* modal style */
+.modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(159, 99, 122, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #9f637a;
+    margin: 15% auto;
+    padding: 20px 10px;
+    border: none;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.signout-btn {
+    background-color: whitesmoke;
+    color: #4B2E39;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: calc(14px + 0.5vw);
+    margin: 20px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 70%;
+}
