@@ -58,28 +58,41 @@ function Navbar() {
     }
 
     return (
-        <nav className="navbar">
-            <div className="navbar-container">
-                <Link to="/" className="navbar-logo">
-                    <div className="navbar-logo-text">Woof Woof Animal Shelter</div>
-                    <div className="navbar-logo-text-small">WWAS</div>
-                </Link>
-                {
-                    isAuthenticated 
-                    ? <div onClick={() => setShowModal(true)} className="user-email">{user}</div>
-                    : <button onClick={signInWithGoogle} className="login-btn">Login</button>
-                }
-            </div>
-
-            {showModal && 
-                <div className="modal" onClick={handleModalClose}>
-                    <div className="modal-content">
-                        <h2>Menu</h2>
-                        <button onClick={logOut} className="signout-btn">Sign Out</button>
-                    </div>
+        <div className="navbar-fixed">
+            <nav className="navbar">
+                <div className="navbar-container">
+                    <Link to="/" className="navbar-logo">
+                        <div className="navbar-logo-text">Woof Woof Animal Shelter</div>
+                        <div className="navbar-logo-text-small">WWAS</div>
+                    </Link>
+                    {
+                        isAuthenticated 
+                        ? <div onClick={() => setShowModal(true)} className="user-email">{user}</div>
+                        : <button onClick={signInWithGoogle} className="login-btn">Login</button>
+                    }
                 </div>
+
+                {showModal && 
+                    <div className="modal" onClick={handleModalClose}>
+                        <div className="modal-content">
+                            <h2>Menu</h2>
+                            <button onClick={logOut} className="signout-btn">Sign Out</button>
+                        </div>
+                    </div>
+                }
+            </nav>
+            {
+                isAuthenticated ?                 
+                <nav className="sub-navbar">
+                    <Link to="/" className="nav-item">Home</Link>
+                    <Link to="/main" className="nav-item">Main</Link>
+                    <Link to="/breeds" className="nav-item">Breeds</Link>
+                    <Link to="/contact" className="nav-item">Contact Us</Link>
+                </nav>
+                :
+                <></>
             }
-        </nav>
+        </div>
     );
 }
 

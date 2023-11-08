@@ -1,11 +1,11 @@
 import Navbar from '../../components/Navbar';
-import "./Home.css"
+import "./home.css"
 
 function Home() {
     return (
         <div className="home-container">
             <Navbar />
-            <div className="content">
+            <div className="home-content">
                 <img src={`/main-logo.svg`} alt="Dog Logo" className="dog-logo"/>
                 <h1>Woof Woof Welcome!</h1>
             </div>

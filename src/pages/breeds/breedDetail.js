@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import Modal from '../../components/Modal';
-import "./main.css"
+import { useParams } from 'react-router-dom';
+import './breedDetail.css';
 
-function Main() {
+function BreedDetail() {
+    const {breedName} = useParams();
     const [dogImages, setDogImages] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState('');
 
     useEffect(() => {
-        fetch('https://dog.ceo/api/breeds/image/random/40') // can only go up to 50
+        fetch(`https://dog.ceo/api/breed/${breedName}/images/random/40`) // can only go up to 50
             .then(response => response.json())
             .then(data => {
                 if (data.status === "success") {
@@ -19,7 +21,7 @@ function Main() {
             .catch(error => {
                 console.error(error);
             });
-    }, []);
+    }, [breedName]);
 
     const handleImageError = (url) => {
         // remove url giving error from dogImages array
@@ -39,7 +41,7 @@ function Main() {
         <div>
             <Navbar />
             <div className="main-content">
-                <h1>Woof-Woof Gallery</h1>
+                <h1>{breedName}</h1>
                 <div className="image-grid">
                     {dogImages.map((url, index) => (
                         <div key={index} className="image-item" onClick={() => handleImageClick(url)}>
@@ -52,7 +54,6 @@ function Main() {
                     ))}
                 </div>
             </div>
-
             {isModalOpen && (
                 <Modal imageUrl={currentImage} onClose={closeModal} />
             )}
@@ -60,4 +61,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default BreedDetail;

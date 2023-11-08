@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // import pages
-import Home from './pages/home/Home';
-import Main from './pages/main/Main';
+import Home from './pages/home/home';
+import Main from './pages/main/main';
+import Breed from './pages/breeds/breeds';
+import BreedDetail from './pages/breeds/breedDetail';
+import Contact from './pages/contact/contact';
 
 import './App.css';
 
@@ -19,7 +22,10 @@ function App() {
         <Route path="/*" element={
           <ProtectedRoute>
             <Routes>
-                <Route path="/main" element={<Main />} />
+              <Route path="/main" element={<Main />} />
+              <Route path="/breeds" element={<Breed />} />
+              <Route path="/breed/:breedName" element={<BreedDetail />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </ProtectedRoute>
         }/>
