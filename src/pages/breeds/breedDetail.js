@@ -11,6 +11,7 @@ function BreedDetail() {
     const [currentImage, setCurrentImage] = useState('');
 
     useEffect(() => {
+        // api is from https://dog.ceo/dog-api/
         fetch(`https://dog.ceo/api/breed/${breedName}/images/random/40`) // can only go up to 50
             .then(response => response.json())
             .then(data => {

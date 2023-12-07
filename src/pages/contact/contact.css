@@ -33,3 +33,13 @@
     font-size: calc(15px + 1vw);
     width: 40%;
 }
+
+.email-link {
+    color: #4B2E39;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}

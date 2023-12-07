@@ -8,6 +8,7 @@ function Breeds() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        // api is from https://dog.ceo/dog-api/
         fetch('https://dog.ceo/api/breeds/list/all') // shows all breed types
             .then(response => response.json())
             .then(data => {

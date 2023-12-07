@@ -81,7 +81,7 @@
 }
 
 /* modal style */
-.modal {
+.modal-menu {
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -94,7 +94,7 @@
     align-items: center;
 }
 
-.modal-content {
+.modal-menu-content {
     background-color: #9f637a;
     margin: 15% auto;
     padding: 20px 10px;

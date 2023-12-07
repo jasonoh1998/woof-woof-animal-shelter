@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import './Modal.css'
 import { useNavigate } from 'react-router-dom';
 
+// using https://www.npmjs.com/package/react-snowfall
+// this displays snow flakes
+import Snowfall from 'react-snowfall';
+
 const names = [
     'Emma', 'Noah', 'Olivia', 'Liam', 'Ava', 'William', 
     'Sophia', 'Mason', 'Isabella', 'James', 'Mia', 'Benjamin', 
@@ -25,6 +29,11 @@ function Modal({ onClose, imageUrl }) {
 
     return (
         <div className="modal-box">
+            <div className="snow-flake">
+                <Snowfall 
+                    snowflakeCount={1200}
+                />
+            </div>
             <div className="modal-content">
                 <div className="modal-body">
                     <img src={imageUrl} alt="Modal Dog" />

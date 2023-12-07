@@ -52,7 +52,7 @@ function Navbar() {
     }
 
     const handleModalClose = (e) => {
-        if (e.target.className === "modal") {
+        if (e.target.className === "modal-menu") {
             setShowModal(false);
         }
     }
@@ -73,8 +73,8 @@ function Navbar() {
                 </div>
 
                 {showModal && 
-                    <div className="modal" onClick={handleModalClose}>
-                        <div className="modal-content">
+                    <div className="modal-menu" onClick={handleModalClose}>
+                        <div className="modal-menu-content">
                             <h2>Menu</h2>
                             <button onClick={logOut} className="signout-btn">Sign Out</button>
                         </div>

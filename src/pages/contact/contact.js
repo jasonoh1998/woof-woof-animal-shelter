@@ -3,6 +3,7 @@ import './contact.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
+// leaflet.js used from https://leafletjs.com/
 // not sure why but leaflet icon doesn't work
 // copied solution online at https://stackoverflow.com/questions/73369796/marker-not-showing-in-react-leaflet
 // this is leaftlet react issue, so the code has to be copied
@@ -37,6 +38,12 @@ function Contact() {
                         <p><b>Address</b>: 750 Commonwealth Ave, Boston, MA</p>
                         <p><b>Phone</b>: +1-999-999-9999</p>
                         <p><b>Fax</b>: +1-999-999-9999</p>
+                        <p>
+                            <b>Email</b>: 
+                            <a className="email-link" href="mailto:info@example.com?subject=Inquiry from Website">
+                                info@example.com
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
